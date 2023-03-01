@@ -1,0 +1,234 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url("./assets/fonts/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: UbuntuBold;
+  src: url("./assets/fonts/Ubuntu-Bold.ttf");
+}
+
+@font-face {
+  font-family: UbuntuMedium;
+  src: url("./assets/fonts/Ubuntu-Medium.ttf");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
+}
+
+img {
+  user-select: none;
+}
+
+p {
+  margin: 0;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(217, 100%, 97%);
+}
+
+.container {
+  width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper_row_1 {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.row_1 {
+  display: flex;
+}
+
+.left_part {
+  position: relative;
+  width: 275px;
+  height: 570px;
+}
+
+.bg_left {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg_left img {
+  width: inherit;
+  height: inherit;
+}
+
+.col_1 {
+  z-index: 999;
+  position: relative;
+}
+
+.row_2 {
+  align-items: center;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.number {
+  display: flex;
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.active_number {
+  background-color: hsl(228, 100%, 84%);
+  border-color: hsl(206, 94%, 87%);
+  color: black;
+}
+
+.number p {
+  font-weight: 700;
+}
+
+.col_2 p {
+  color: hsl(228, 100%, 84%);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.col_2 h2 {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.right_part {
+  padding: 35px 100px 20px 100px;
+}
+
+.step_1 {
+  height: 100%;
+  position: relative;
+}
+
+.title_step {
+  margin-bottom: 40px;
+}
+
+.title_step h2 {
+  color: hsl(213, 96%, 18%);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: UbuntuBold, sans-serif;
+  margin-bottom: 10px;
+}
+
+.title_step p {
+  color: hsl(231, 11%, 63%);
+}
+
+.col_3 {
+  padding-bottom: 20px;
+}
+
+.row_3 {
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.row_3 label {
+  color: hsl(213, 96%, 18%);
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.row_3 p {
+  color: hsl(354, 84%, 57%);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.field_required {
+  display: none;
+}
+
+.invalid_number {
+  display: none;
+}
+
+.invalid_mail {
+  display: none;
+}
+
+.form_input {
+  border-radius: 7px;
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 12px;
+  font-family: UbuntuMedium, sans-serif;
+}
+
+.form_input:focus {
+  outline: none;
+  border-color: hsl(243, 100%, 62%) !important;
+}
+
+.pagination {
+  margin-top: 40px;
+  width: 100%;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
+.next {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  font-family: UbuntuMedium, sans-serif;
+  padding: 12px 20px;
+  border-radius: 7px;
+  border-color: transparent;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.next:disabled {
+  background: hsl(227.6, 100%, 83.9%);
+  cursor: auto;
+}
