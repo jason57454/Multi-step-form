@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="wrapper_row_1">
+          <div class="row row_1">
+            <div class="left_part">
+              <div class="bg_left">
+                <img src="./assets/images/bg-sidebar-desktop.svg" alt="" />
+              </div>
+              <div class="col col_1">
+                <div class="row row_2">
+                  <div class="number active_number"><p>1</p></div>
+                  <div class="col col_2">
+                    <p>Step 1</p>
+                    <h2>Your info</h2>
+                  </div>
+                </div>
+                <div class="row row_2">
+                  <div class="number"><p>2</p></div>
+                  <div class="col col_2">
+                    <p>Step 2</p>
+                    <h2>Select plan</h2>
+                  </div>
+                </div>
+                <div class="row row_2">
+                  <div class="number"><p>3</p></div>
+                  <div class="col col_2">
+                    <p>Step 3</p>
+                    <h2>Add-ons</h2>
+                  </div>
+                </div>
+                <div class="row row_2">
+                  <div class="number"><p>4</p></div>
+                  <div class="col col_2">
+                    <p>Step 4</p>
+                    <h2>Summary</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form class="right_part">
+              <div class="col step_1">
+                <div class="title_step">
+                  <h2>Personal info</h2>
+                  <p>
+                    Please provide your name, email address, and phone number.
+                  </p>
+                </div>
+                <div class="col panel">
+                  <div class="col col_3">
+                    <div class="row row_3">
+                      <label for="name">Name</label>
+                      <p class="field_required">This field is required</p>
+                    </div>
+                    <input
+                      class="form_input"
+                      type="text"
+                      name="Name"
+                      placeholder="e.g. Stephen King"
+                    />
+                  </div>
+                  <div class="col col_3">
+                    <div class="row row_3">
+                      <label for="email">Email address</label>
+                      <p class="field_required">This field is required</p>
+                      <p class="invalid_mail">Invalid format</p>
+                    </div>
+                    <input
+                      class="form_input"
+                      type="email"
+                      name="emailAddress"
+                      id="email"
+                      placeholder="e.g. stephenking@lorem.com"
+                    />
+                  </div>
+                  <div class="col col_3">
+                    <div class="row row_3">
+                      <label for="phone">Phone number</label>
+                      <p class="field_required">This field is required</p>
+                      <p class="invalid_number">Invalid format</p>
+                    </div>
+                    <input
+                      class="form_input"
+                      type="tel"
+                      name="phoneNumber"
+                      id="phone"
+                      placeholder="e.g. +1 234 567 890"
+                    />
+                  </div>
+                </div>
+                <div class="row pagination">
+                  <button class="next" disabled>Next step</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
