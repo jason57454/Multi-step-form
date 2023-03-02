@@ -48,7 +48,7 @@
               </div>
             </div>
             <form class="right_part">
-              <div class="col step_1">
+              <div class="col step step_1">
                 <div class="title_step">
                   <h2>Personal info</h2>
                   <p>
@@ -72,7 +72,7 @@
                     <div class="row row_3">
                       <label for="email">Email address</label>
                       <p class="field_required">This field is required</p>
-                      <p class="invalid_mail">Invalid format</p>
+                      <p class="invalid_mail">Invalid email address</p>
                     </div>
                     <input
                       class="form_input"
@@ -86,7 +86,7 @@
                     <div class="row row_3">
                       <label for="phone">Phone number</label>
                       <p class="field_required">This field is required</p>
-                      <p class="invalid_number">Invalid format</p>
+                      <p class="invalid_number">Invalid phone number</p>
                     </div>
                     <input
                       class="form_input"
@@ -101,10 +101,27 @@
                   <button class="next" disabled>Next step</button>
                 </div>
               </div>
+              <div class="col step step_2">
+                <div class="title_step">
+                  <h2>Select your plan</h2>
+                  <p>You have the option of monthly or yearly billing.</p>
+                </div>
+                <div class="col panel">
+                  <div class="row row_4">
+                    <!-- Html from array.js  -->
+                  </div>
+                </div>
+                <div class="row pagination space-between">
+                  <button class="prev">Go back</button>
+                  <button class="next" disabled>Next step</button>
+                </div>
+              </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <script src="main.js"></script>
+    <script src="array.js"></script>
   </body>
 </html>
