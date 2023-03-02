@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
@@ -18,15 +17,15 @@ body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Ubuntu, sans-serif;
 }
 
 img {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 p {
@@ -50,8 +49,8 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .row {
@@ -60,8 +59,8 @@ h6 {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }
 
 .main {
@@ -71,8 +70,8 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   background-color: hsl(217, 100%, 97%);
 }
 
@@ -84,14 +83,14 @@ h6 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .wrapper_row_1 {
@@ -99,7 +98,7 @@ h6 {
   padding: 15px;
   border-radius: 15px;
   -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .row_1 {
@@ -132,8 +131,8 @@ h6 {
 
 .row_2 {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-left: 30px;
   padding-top: 30px;
 }
@@ -148,11 +147,11 @@ h6 {
   border-radius: 50%;
   color: white;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-right: 20px;
 }
 
@@ -180,9 +179,14 @@ h6 {
 
 .right_part {
   padding: 35px 100px 20px 100px;
+  width: calc(650px - 200px);
 }
 
 .step_1 {
+  display: none;
+}
+
+.step {
   height: 100%;
   position: relative;
 }
@@ -210,8 +214,8 @@ h6 {
 .row_3 {
   margin-bottom: 10px;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .row_3 label {
@@ -254,10 +258,19 @@ h6 {
   margin-top: 40px;
   width: 100%;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   position: absolute;
   bottom: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .next {
@@ -274,4 +287,42 @@ h6 {
 .next:disabled {
   background: hsl(227.6, 100%, 83.9%);
   cursor: auto;
+}
+
+.row_4 {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.wrapper_col_4 {
+  width: 138px;
+}
+
+.col_4 {
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.icon_plan {
+  margin-bottom: 40px;
+}
+
+.col_4 label {
+  font-family: UbuntuMedium, sans-serif;
+  color: hsl(213, 96%, 18%);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price_plan {
+  color: #9699aa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.yr_offer {
+  color: #022959;
+  font-size: 13px;
 }
