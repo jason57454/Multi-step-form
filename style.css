@@ -1,3 +1,5 @@
+/* Handling fonts */
+
 @font-face {
   font-family: Ubuntu;
   src: url("./assets/fonts/Ubuntu-Regular.ttf");
@@ -11,6 +13,28 @@
 @font-face {
   font-family: UbuntuMedium;
   src: url("./assets/fonts/Ubuntu-Medium.ttf");
+}
+
+.regular {
+  font-family: Ubuntu, sans-serif;
+}
+
+.medium {
+  font-family: UbuntuMedium, sans-serif;
+}
+
+.bold {
+  font-family: UbuntuBold, sans-serif;
+}
+
+/* General settings */
+
+:root {
+  --purple: #483eff;
+  --blue: #022959;
+  --light-grey: #f8f9ff;
+  --grey: #9699aa;
+  --light-blue: hsl(228, 100%, 84%);
 }
 
 body {
@@ -115,6 +139,8 @@ button {
   display: flex;
 }
 
+/* Menu settings */
+
 .left_part {
   position: relative;
   width: 275px;
@@ -164,7 +190,7 @@ button {
 }
 
 .active_number {
-  background-color: hsl(228, 100%, 84%);
+  background-color: var(--light-blue);
   border-color: hsl(206, 94%, 87%);
   color: black;
 }
@@ -174,7 +200,7 @@ button {
 }
 
 .col_2 p {
-  color: hsl(228, 100%, 84%);
+  color: var(--light-blue);
   text-transform: uppercase;
   font-size: 14px;
 }
@@ -185,10 +211,14 @@ button {
   text-transform: uppercase;
 }
 
+/* Form settings */
+
 .right_part {
   padding: 35px 100px 20px 100px;
   width: calc(650px - 200px);
 }
+
+/* Step 1 settings */
 
 .step_1 {
   display: none;
@@ -204,7 +234,7 @@ button {
 }
 
 .title_step h2 {
-  color: hsl(213, 96%, 18%);
+  color: var(--blue);
   font-size: 2rem;
   font-weight: 700;
   font-family: UbuntuBold, sans-serif;
@@ -212,7 +242,7 @@ button {
 }
 
 .title_step p {
-  color: hsl(231, 11%, 63%);
+  color: var(--grey);
 }
 
 .col_3 {
@@ -227,7 +257,7 @@ button {
 }
 
 .row_3 label {
-  color: hsl(213, 96%, 18%);
+  color: var(--blue);
   text-transform: capitalize;
   font-size: 15px;
 }
@@ -259,7 +289,7 @@ button {
 
 .form_input:focus {
   outline: none;
-  border-color: hsl(243, 100%, 62%) !important;
+  border-color: var(--purple) !important;
 }
 
 .pagination {
@@ -282,7 +312,7 @@ button {
 }
 
 .next {
-  background-color: hsl(213, 96%, 18%);
+  background-color: var(--blue);
   color: white;
   font-family: UbuntuMedium, sans-serif;
   padding: 12px 20px;
@@ -299,6 +329,8 @@ button {
   background: hsl(227.6, 100%, 83.9%);
   cursor: auto;
 }
+
+/* Step 2 settings */
 
 .step_2 {
   display: none;
@@ -326,26 +358,26 @@ button {
 
 .col_4 label {
   font-family: UbuntuMedium, sans-serif;
-  color: hsl(213, 96%, 18%);
+  color: var(--blue);
   font-size: 16px;
   margin-bottom: 10px;
 }
 
 .price_plan {
-  color: #9699aa;
+  color: var(--grey);
   font-size: 14px;
   margin-bottom: 10px;
 }
 
 .yr_offer {
-  color: #022959;
+  color: var(--blue);
   font-size: 13px;
 }
 
 .switch {
   margin-top: 30px;
   width: 100%;
-  background-color: #f8f9ff;
+  background-color: var(--light-grey);
   border-radius: 8px;
 }
 
@@ -366,11 +398,11 @@ button {
 }
 
 .monthly {
-  color: #022959;
+  color: var(--blue);
 }
 
 .yearly {
-  color: #9699aa;
+  color: var(--grey);
 }
 
 .switch_btn {
@@ -394,7 +426,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #022959;
+  background-color: var(--blue);
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
@@ -429,7 +461,7 @@ button {
 }
 
 .prev {
-  color: #9699aa;
+  color: var(--grey);
   text-transform: capitalize;
   background-color: transparent;
   border-color: transparent;
@@ -438,8 +470,10 @@ button {
 }
 
 .prev:hover {
-  color: #022959;
+  color: var(--blue);
 }
+
+/* Step 3 settings */
 
 .step_3 {
   display: none;
@@ -485,26 +519,28 @@ button {
 .col_6 p:nth-child(1) {
   font-size: 16px;
   font-family: UbuntuMedium, sans-serif;
-  color: #022959;
+  color: var(--blue);
   margin-bottom: 9px;
 }
 
 .col_6 p:nth-child(2) {
   font-size: 14px;
-  color: #9699aa;
+  color: var(--grey);
 }
 
 .addons_price {
-  color: #483eff;
+  color: var(--purple);
   font-size: 14px;
 }
+
+/* Step 4 settings */
 
 .step_4 {
   visibility: visible;
 }
 
 .submit {
-  background-color: #483eff;
+  background-color: var(--purple);
   color: white;
   font-family: UbuntuMedium, sans-serif;
   padding: 12px 20px;
@@ -525,7 +561,7 @@ button {
 }
 
 .col_7 {
-  background-color: #f8f9ff;
+  background-color: var(--light-grey);
   border-radius: 8px;
   padding: 16px 24px;
 }
@@ -545,7 +581,7 @@ button {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #9699aa;
+  background-color: #dadce3;
   position: absolute;
   bottom: 0;
 }
@@ -553,13 +589,13 @@ button {
 .final_plan {
   font-family: UbuntuMedium, sans-serif;
   font-size: 16px;
-  color: #022959;
+  color: var(--blue);
   text-transform: capitalize;
   margin-bottom: 5px;
 }
 
 .change_plan {
-  color: #9699aa;
+  color: var(--grey);
   text-decoration: underline;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -568,12 +604,12 @@ button {
 }
 
 .change_plan:hover {
-  color: #483eff;
+  color: var(--purple);
 }
 
 .plan_price {
   font-family: UbuntuBold, sans-serif;
-  color: #022959;
+  color: var(--blue);
 }
 
 .row_9 {
@@ -587,12 +623,12 @@ button {
 }
 
 .final_addons {
-  color: #9699aa;
+  color: var(--grey);
   font-size: 14px;
 }
 
 .final_addons_price {
-  color: #022959;
+  color: var(--blue);
   font-size: 14px;
 }
 
@@ -607,12 +643,12 @@ button {
 }
 
 .final_price p:nth-child(1) {
-  color: #9699aa;
+  color: var(--grey);
   font-size: 14px;
 }
 
 .final_price p:nth-child(2) {
   font-size: 20px;
-  color: #483eff;
+  color: var(--purple);
   font-family: UbuntuBold, sans-serif;
 }
