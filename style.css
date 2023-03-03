@@ -33,6 +33,10 @@ p {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -41,6 +45,10 @@ h5,
 h6 {
   margin: 0;
   font-size: 16px;
+}
+
+button {
+  cursor: pointer;
 }
 
 .col {
@@ -200,7 +208,7 @@ h6 {
   font-size: 2rem;
   font-weight: 700;
   font-family: UbuntuBold, sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .title_step p {
@@ -281,12 +289,19 @@ h6 {
   border-radius: 7px;
   border-color: transparent;
   text-transform: capitalize;
-  cursor: pointer;
+}
+
+.next:hover {
+  background-color: #164a8a;
 }
 
 .next:disabled {
   background: hsl(227.6, 100%, 83.9%);
   cursor: auto;
+}
+
+.step_2 {
+  display: none;
 }
 
 .row_4 {
@@ -325,4 +340,279 @@ h6 {
 .yr_offer {
   color: #022959;
   font-size: 13px;
+}
+
+.switch {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #f8f9ff;
+  border-radius: 8px;
+}
+
+.row_5 {
+  padding: 13px 0;
+  width: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.row_5 p {
+  font-family: UbuntuBold, sans-serif;
+  font-size: 14px;
+}
+
+.monthly {
+  color: #022959;
+}
+
+.yearly {
+  color: #9699aa;
+}
+
+.switch_btn {
+  margin: 0 15px;
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #022959;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  left: -4px;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.prev {
+  color: #9699aa;
+  text-transform: capitalize;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 16px;
+  font-family: UbuntuMedium, sans-serif;
+}
+
+.prev:hover {
+  color: #022959;
+}
+
+.step_3 {
+  display: none;
+}
+
+.wrapper_row_6 {
+  border: 1px solid #d6d9e6;
+  border-radius: 8px;
+}
+
+.wrapper_row_6:nth-child(2) {
+  margin: 20px 0;
+}
+
+.row_6 {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.row_7 {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 1px solid #d6d9e6;
+  border-radius: 4px;
+}
+
+.col_6 {
+  padding-left: 20px;
+}
+
+.col_6 p:nth-child(1) {
+  font-size: 16px;
+  font-family: UbuntuMedium, sans-serif;
+  color: #022959;
+  margin-bottom: 9px;
+}
+
+.col_6 p:nth-child(2) {
+  font-size: 14px;
+  color: #9699aa;
+}
+
+.addons_price {
+  color: #483eff;
+  font-size: 14px;
+}
+
+.step_4 {
+  visibility: visible;
+}
+
+.submit {
+  background-color: #483eff;
+  color: white;
+  font-family: UbuntuMedium, sans-serif;
+  padding: 12px 20px;
+  border-radius: 7px;
+  border-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.submit:hover {
+  background-color: #928cff;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.col_7 {
+  background-color: #f8f9ff;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+
+.row_8 {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.row_8::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #9699aa;
+  position: absolute;
+  bottom: 0;
+}
+
+.final_plan {
+  font-family: UbuntuMedium, sans-serif;
+  font-size: 16px;
+  color: #022959;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.change_plan {
+  color: #9699aa;
+  text-decoration: underline;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.change_plan:hover {
+  color: #483eff;
+}
+
+.plan_price {
+  font-family: UbuntuBold, sans-serif;
+  color: #022959;
+}
+
+.row_9 {
+  margin-top: 20px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.final_addons {
+  color: #9699aa;
+  font-size: 14px;
+}
+
+.final_addons_price {
+  color: #022959;
+  font-size: 14px;
+}
+
+.final_price {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 31px 24px 0 24px;
+}
+
+.final_price p:nth-child(1) {
+  color: #9699aa;
+  font-size: 14px;
+}
+
+.final_price p:nth-child(2) {
+  font-size: 20px;
+  color: #483eff;
+  font-family: UbuntuBold, sans-serif;
 }
