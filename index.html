@@ -18,182 +18,192 @@
               </div>
               <div class="col col_1">
                 <div class="row row_2">
-                  <div class="number active_number"><p>1</p></div>
+                  <div class="number active_number"><p class="bold">1</p></div>
                   <div class="col col_2">
                     <p>Step 1</p>
-                    <h2>Your info</h2>
+                    <p class="bold">Your info</p>
                   </div>
                 </div>
                 <div class="row row_2">
-                  <div class="number"><p>2</p></div>
+                  <div class="number"><p class="bold">2</p></div>
                   <div class="col col_2">
                     <p>Step 2</p>
-                    <h2>Select plan</h2>
+                    <p class="bold">Select plan</p>
                   </div>
                 </div>
                 <div class="row row_2">
-                  <div class="number"><p>3</p></div>
+                  <div class="number"><p class="bold">3</p></div>
                   <div class="col col_2">
                     <p>Step 3</p>
-                    <h2>Add-ons</h2>
+                    <p class="bold">Add-ons</p>
                   </div>
                 </div>
                 <div class="row row_2">
-                  <div class="number"><p>4</p></div>
+                  <div class="number"><p class="bold">4</p></div>
                   <div class="col col_2">
                     <p>Step 4</p>
-                    <h2>Summary</h2>
+                    <p class="bold">Summary</p>
                   </div>
                 </div>
               </div>
             </div>
             <form class="right_part">
-              <div class="col step step_1">
-                <div class="title_step">
-                  <h2>Personal info</h2>
-                  <p>
-                    Please provide your name, email address, and phone number.
-                  </p>
-                </div>
-                <div class="col panel">
-                  <div class="col col_3">
-                    <div class="row row_3">
-                      <label for="name">Name</label>
-                      <p class="field_required">This field is required</p>
-                    </div>
-                    <input
-                      class="form_input"
-                      type="text"
-                      name="Name"
-                      placeholder="e.g. Stephen King"
-                    />
+              <div class="col panel">
+                <div class="col step step_1 active_step">
+                  <div class="title_step">
+                    <h2 class="bold">Personal info</h2>
+                    <p>
+                      Please provide your name, email address, and phone number.
+                    </p>
                   </div>
-                  <div class="col col_3">
-                    <div class="row row_3">
-                      <label for="email">Email address</label>
-                      <p class="field_required">This field is required</p>
-                      <p class="invalid_mail">Invalid email address</p>
+                  <div class="wrapper_col_3">
+                    <div class="col col_3">
+                      <div class="row row_3">
+                        <label for="name">Name</label>
+                        <p class="field_required">This field is required</p>
+                      </div>
+                      <input
+                        class="form_input medium"
+                        type="text"
+                        name="Name"
+                        id="name"
+                        placeholder="e.g. Stephen King"
+                      />
                     </div>
-                    <input
-                      class="form_input"
-                      type="email"
-                      name="emailAddress"
-                      id="email"
-                      placeholder="e.g. stephenking@lorem.com"
-                    />
-                  </div>
-                  <div class="col col_3">
-                    <div class="row row_3">
-                      <label for="phone">Phone number</label>
-                      <p class="field_required">This field is required</p>
-                      <p class="invalid_number">Invalid phone number</p>
+                    <div class="col col_3">
+                      <div class="row row_3">
+                        <label for="email">Email address</label>
+                        <p class="field_required">This field is required</p>
+                        <p class="invalid_mail">Invalid email address</p>
+                      </div>
+                      <input
+                        class="form_input medium"
+                        type="email"
+                        name="emailAddress"
+                        id="email"
+                        placeholder="e.g. stephenking@lorem.com"
+                      />
                     </div>
-                    <input
-                      class="form_input"
-                      type="tel"
-                      name="phoneNumber"
-                      id="phone"
-                      placeholder="e.g. +1 234 567 890"
-                    />
+                    <div class="col col_3">
+                      <div class="row row_3">
+                        <label for="phone">Phone number</label>
+                        <p class="field_required">This field is required</p>
+                        <p class="invalid_number">Invalid phone number</p>
+                      </div>
+                      <input
+                        class="form_input medium"
+                        type="tel"
+                        name="phoneNumber"
+                        id="phone"
+                        placeholder="e.g. +1 234 567 890"
+                      />
+                    </div>
                   </div>
                 </div>
-                <div class="row pagination">
-                  <button class="next" disabled>Next step</button>
-                </div>
-              </div>
-              <div class="col step step_2">
-                <div class="title_step">
-                  <h2>Select your plan</h2>
-                  <p>You have the option of monthly or yearly billing.</p>
-                </div>
-                <div class="col panel">
+                <div class="col step step_2">
+                  <div class="title_step">
+                    <h2 class="bold">Select your plan</h2>
+                    <p>You have the option of monthly or yearly billing.</p>
+                  </div>
                   <div class="row row_4">
-                    <!-- Html from array.js  -->
+                    <!-- Html from step2.js  -->
                   </div>
                   <div class="switch">
                     <div class="row row_5">
-                      <p class="monthly">Monthly</p>
+                      <p class="switch_month active_plan bold">Monthly</p>
                       <label class="switch_btn">
                         <input type="checkbox" class="toggle" />
                         <span class="slider round"></span>
                       </label>
-                      <p class="yearly">Yearly</p>
+                      <p class="switch_year bold">Yearly</p>
                     </div>
                   </div>
                 </div>
-                <div class="row pagination space-between">
-                  <button class="prev">Go back</button>
-                  <button class="next" disabled>Next step</button>
-                </div>
-              </div>
-              <div class="col step step_3">
-                <div class="title_step">
-                  <h2>Pick add-ons</h2>
-                  <p>Add-ons help enhance your gaming experience.</p>
-                </div>
-                <div class="col panel">
+                <div class="col step step_3">
+                  <div class="title_step">
+                    <h2 class="bold">Pick add-ons</h2>
+                    <p>Add-ons help enhance your gaming experience.</p>
+                  </div>
                   <div class="col col_5">
                     <div class="wrapper_row_6">
                       <div class="row row_6">
                         <div class="row row_7">
-                          <div class="checkbox"></div>
+                          <div class="checkbox">
+                            <img
+                              class="checkmark"
+                              src="./assets/images/icon-checkmark.svg"
+                              alt=""
+                            />
+                          </div>
                           <div class="col col_6">
-                            <p>Online service</p>
+                            <p class="medium addon_name">Online service</p>
                             <p>Access to multiplayer games</p>
                           </div>
                         </div>
-                        <div class="addons_month addons_price">+$1/mo</div>
-                        <div class="addons_year addons_price">+$10/yr</div>
+                        <div class="addons_month addons_price monthly">
+                          +$1/mo
+                        </div>
+                        <div class="addons_price yearly">+$10/yr</div>
                       </div>
                     </div>
                     <div class="wrapper_row_6">
                       <div class="row row_6">
                         <div class="row row_7">
-                          <div class="checkbox"></div>
+                          <div class="checkbox">
+                            <img
+                              class="checkmark"
+                              src="./assets/images/icon-checkmark.svg"
+                              alt=""
+                            />
+                          </div>
                           <div class="col col_6">
-                            <p>Larger storage</p>
+                            <p class="medium addon_name">Larger storage</p>
                             <p>Extra 1TB of cloud save</p>
                           </div>
                         </div>
-                        <div class="addons_month addons_price">+$2/mo</div>
-                        <div class="addons_year addons_price">+$20/yr</div>
+                        <div class="addons_month addons_price monthly">
+                          +$2/mo
+                        </div>
+                        <div class="addons_price yearly">+$20/yr</div>
                       </div>
                     </div>
                     <div class="wrapper_row_6">
                       <div class="row row_6">
                         <div class="row row_7">
-                          <div class="checkbox"></div>
+                          <div class="checkbox">
+                            <img
+                              class="checkmark"
+                              src="./assets/images/icon-checkmark.svg"
+                              alt=""
+                            />
+                          </div>
                           <div class="col col_6">
-                            <p>Customizable profile</p>
+                            <p class="medium addon_name">
+                              Customizable profile
+                            </p>
                             <p>Custom theme on your profile</p>
                           </div>
                         </div>
-                        <div class="addons_month addons_price">+$2/mo</div>
-                        <div class="addons_year addons_price">+$20/yr</div>
+                        <div class="addons_price monthly">+$2/mo</div>
+                        <div class="addons_price yearly">+$20/yr</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row pagination space-between">
-                  <button class="prev">Go back</button>
-                  <button class="next" disabled>Next step</button>
-                </div>
-              </div>
-              <div class="col step step_4">
-                <div class="title_step">
-                  <h2>Finishing up</h2>
-                  <p>Double-check everything looks OK before confirming.</p>
-                </div>
-                <div class="col panel">
+                <div class="col step step_4">
+                  <div class="title_step">
+                    <h2 class="bold">Finishing up</h2>
+                    <p>Double-check everything looks OK before confirming.</p>
+                  </div>
                   <div class="col col_7">
                     <div class="row row_8">
                       <div class="col col_8">
-                        <p class="final_plan">Arcade (yearly)</p>
+                        <p class="final_plan medium">Arcade (yearly)</p>
                         <a href="#" class="change_plan">Change</a>
                       </div>
                       <p class="plan_price">$90/yr</p>
                     </div>
-                    <div class="row row_9">
+                    <div class="row row_9 line_top">
                       <p class="final_addons">Online service</p>
                       <p class="final_addons_price">+$10/yr</p>
                     </div>
@@ -204,12 +214,13 @@
                   </div>
                   <div class="row final_price">
                     <p>Total (per year)</p>
-                    <p>$120/yr</p>
+                    <p class="bold">$120/yr</p>
                   </div>
                 </div>
                 <div class="row pagination space-between">
-                  <button class="prev">Go back</button>
-                  <input type="submit" class="submit" value="Confirm" />
+                  <button class="prev medium">Go back</button>
+                  <button class="next medium" disabled>next step</button>
+                  <input type="submit" class="submit medium" value="Confirm" />
                 </div>
               </div>
             </form>
@@ -218,6 +229,6 @@
       </div>
     </div>
     <script src="main.js"></script>
-    <script src="array.js"></script>
+    <script src="step2.js"></script>
   </body>
 </html>
