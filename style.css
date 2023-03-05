@@ -15,10 +15,6 @@
   src: url("./assets/fonts/Ubuntu-Medium.ttf");
 }
 
-.regular {
-  font-family: Ubuntu, sans-serif;
-}
-
 .medium {
   font-family: UbuntuMedium, sans-serif;
 }
@@ -130,7 +126,7 @@ button {
   padding: 15px;
   border-radius: 15px;
   -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 40px 25px -20px rgba(0, 0, 0, 0.1);
 }
 
 .row_1 {
@@ -176,8 +172,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   border: 1px solid white;
-  width: 30px;
-  height: 30px;
+  width: 33px;
+  height: 33px;
   border-radius: 50%;
   color: white;
   -webkit-box-pack: center;
@@ -186,28 +182,30 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 16px;
 }
 
 .active_number {
-  background-color: var(--light-blue);
-  border-color: hsl(206, 94%, 87%);
+  background-color: #bee2fd;
+  border-color: #bee2fd;
   color: black;
 }
 
 .number p {
-  font-weight: 700;
-}
-
-.col_2 p {
-  color: var(--light-blue);
-  text-transform: uppercase;
   font-size: 14px;
 }
 
-.col_2 h2 {
+.col_2 p:nth-child(1) {
+  color: var(--light-blue);
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.col_2 p:nth-child(2) {
+  font-size: 14px;
+  letter-spacing: 1px;
   color: white;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -218,15 +216,24 @@ button {
   width: calc(650px - 200px);
 }
 
+.panel {
+  height: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 /* Step 1 settings */
 
-.step_1 {
+.step {
+  position: relative;
   display: none;
 }
 
-.step {
-  height: 100%;
-  position: relative;
+.active_step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .title_step {
@@ -236,8 +243,6 @@ button {
 .title_step h2 {
   color: var(--blue);
   font-size: 2rem;
-  font-weight: 700;
-  font-family: UbuntuBold, sans-serif;
   margin-bottom: 11px;
 }
 
@@ -284,7 +289,6 @@ button {
   border-radius: 7px;
   border: 1px solid hsl(229, 24%, 87%);
   padding: 12px;
-  font-family: UbuntuMedium, sans-serif;
 }
 
 .form_input:focus {
@@ -298,23 +302,20 @@ button {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-  position: absolute;
-  bottom: 0;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
 }
 
 .space-between {
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .next {
   background-color: var(--blue);
   color: white;
-  font-family: UbuntuMedium, sans-serif;
   padding: 12px 20px;
   border-radius: 7px;
   border-color: transparent;
@@ -330,11 +331,11 @@ button {
   cursor: auto;
 }
 
-/* Step 2 settings */
-
-.step_2 {
-  display: none;
+.prev:disabled {
+  opacity: 0;
 }
+
+/* Step 2 settings */
 
 .row_4 {
   -webkit-box-pack: justify;
@@ -344,6 +345,8 @@ button {
 
 .wrapper_col_4 {
   width: 138px;
+  cursor: pointer;
+  z-index: 999;
 }
 
 .col_4 {
@@ -352,26 +355,45 @@ button {
   padding: 15px;
 }
 
+.col_4:hover {
+  border-color: var(--purple);
+}
+
+.selected_plan {
+  border-color: var(--purple);
+  background-color: #f8f9ff;
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.col_4 > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .icon_plan {
   margin-bottom: 40px;
 }
 
 .col_4 label {
-  font-family: UbuntuMedium, sans-serif;
   color: var(--blue);
   font-size: 16px;
-  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .price_plan {
   color: var(--grey);
   font-size: 14px;
-  margin-bottom: 10px;
+  padding-top: 10px;
 }
 
 .yr_offer {
   color: var(--blue);
   font-size: 13px;
+  padding-top: 10px;
 }
 
 .switch {
@@ -393,16 +415,12 @@ button {
 }
 
 .row_5 p {
-  font-family: UbuntuBold, sans-serif;
   font-size: 14px;
-}
-
-.monthly {
-  color: var(--blue);
-}
-
-.yearly {
   color: var(--grey);
+}
+
+.active_plan {
+  color: var(--blue) !important;
 }
 
 .switch_btn {
@@ -410,6 +428,7 @@ button {
   position: relative;
   width: 40px;
   height: 20px;
+  z-index: 999;
 }
 
 .toggle {
@@ -466,7 +485,7 @@ button {
   background-color: transparent;
   border-color: transparent;
   font-size: 16px;
-  font-family: UbuntuMedium, sans-serif;
+  display: none;
 }
 
 .prev:hover {
@@ -475,13 +494,27 @@ button {
 
 /* Step 3 settings */
 
-.step_3 {
-  display: none;
-}
-
 .wrapper_row_6 {
   border: 1px solid #d6d9e6;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.wrapper_row_6 > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wrapper_row_6:hover {
+  border-color: var(--purple);
+}
+
+.addons_active {
+  border-color: var(--purple);
+  background-color: #f8f9ff;
+  outline: none;
 }
 
 .wrapper_row_6:nth-child(2) {
@@ -510,6 +543,30 @@ button {
   margin: 0;
   border: 1px solid #d6d9e6;
   border-radius: 4px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.addons_active .checkbox {
+  background-color: var(--purple);
+  margin-right: 2px;
+  border: none;
+}
+
+.checkmark {
+  z-index: 10;
 }
 
 .col_6 {
@@ -518,7 +575,6 @@ button {
 
 .col_6 p:nth-child(1) {
   font-size: 16px;
-  font-family: UbuntuMedium, sans-serif;
   color: var(--blue);
   margin-bottom: 9px;
 }
@@ -535,29 +591,19 @@ button {
 
 /* Step 4 settings */
 
-.step_4 {
-  visibility: visible;
-}
-
 .submit {
   background-color: var(--purple);
   color: white;
-  font-family: UbuntuMedium, sans-serif;
   padding: 12px 20px;
   border-radius: 7px;
   border-color: transparent;
   font-size: 16px;
   cursor: pointer;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
+  display: none;
 }
 
 .submit:hover {
   background-color: #928cff;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
 }
 
 .col_7 {
@@ -570,24 +616,13 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
   padding-bottom: 20px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
-.row_8::before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #dadce3;
-  position: absolute;
-  bottom: 0;
-}
-
 .final_plan {
-  font-family: UbuntuMedium, sans-serif;
   font-size: 16px;
   color: var(--blue);
   text-transform: capitalize;
@@ -613,13 +648,23 @@ button {
 }
 
 .row_9 {
-  margin-top: 20px;
+  position: relative;
+  padding-top: 20px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.line_top::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #dadce3;
+  position: absolute;
+  top: 0;
 }
 
 .final_addons {
@@ -650,5 +695,14 @@ button {
 .final_price p:nth-child(2) {
   font-size: 20px;
   color: var(--purple);
-  font-family: UbuntuBold, sans-serif;
+}
+
+/* Year/monthly settings */
+
+.monthly {
+  display: block;
+}
+
+.yearly {
+  display: none;
 }
