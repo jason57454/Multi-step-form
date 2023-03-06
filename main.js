@@ -151,12 +151,10 @@ function currentStep(event) {
     nextBtn.setAttribute("disabled", true);
   }
 
-  if (i >= 2) {
+  if (i > 2) {
     getData();
   }
 }
-
-console.log(i);
 
 nextBtn.addEventListener("click", currentStep);
 prevBtn.addEventListener("click", currentStep);
@@ -172,28 +170,73 @@ addons.forEach(function (addon) {
 });
 
 // Handling last step data
-
 let radioContent = [];
 let addonsValues = [];
 
 function getData() {
   const selectedPlan = document.querySelector(".selected_plan");
+  let activeAddons = Array.from(document.querySelectorAll(".addons_active"));
+  var finalPlan = document.querySelector(".final_plan");
+  var planPrice = document.querySelector(".plan_price");
+  var showAddons = document.querySelectorAll(".row_9");
+  var finalAddons = document.querySelectorAll(".row_9 .final_addons");
+  var addonPrice = document.querySelectorAll(".row_9 .final_addons_price");
+
+  radioContent.splice(0, radioContent.length);
+  addonsValues.splice(0, addonsValues.length);
 
   // Getting the title and price of the step 2 plan
-  const selectedPlanContent = ` ${
-    selectedPlan.querySelector("label").textContent
-  } - ${selectedPlan.querySelector(".price_plan").textContent}`;
-
-  var activeAddons = document.querySelectorAll(".addons_active");
-
-  radioContent.push(selectedPlanContent);
-
-  activeAddons.forEach((addons) => {
-    let addonData = {
-      name: addons.querySelector(".addon_name").innerHTML,
-      price: addons.querySelector(".addons_price").innerHTML,
+  if (monthActive.classList.contains("active_plan")) {
+    let selectedPlanContent = {
+      title: selectedPlan.querySelector("label").textContent,
+      price: extractPriceFromString(
+        selectedPlan.querySelector(".price_month").textContent
+      ),
     };
-    addonsValues.push(addonData);
+
+    radioContent.push(selectedPlanContent);
+
+    activeAddons.forEach((addons) => {
+      let addonData = {
+        name: addons.querySelector(".addon_name").innerHTML,
+        price: extractAddonPriceFromString(
+          addons.querySelector(".addons_month").innerHTML
+        ),
+      };
+      addonsValues.push(addonData);
+    });
+  } else if (yearActive.classList.contains("active_plan")) {
+    let selectedPlanContent = {
+      title: selectedPlan.querySelector("label").textContent,
+      price: extractPriceFromString(
+        selectedPlan.querySelector(".price_year").textContent
+      ),
+    };
+    radioContent.push(selectedPlanContent);
+
+    activeAddons.forEach((addons) => {
+      let addonData = {
+        name: addons.querySelector(".addon_name").innerHTML,
+        price: extractAddonPriceFromString(
+          addons.querySelector(".addons_year").innerHTML
+        ),
+      };
+      addonsValues.push(addonData);
+    });
+  }
+
+  finalPlan.innerHTML = radioContent[0].title;
+  planPrice.innerHTML = radioContent[0].price;
+
+  finalAddons.forEach((addon, i) => {
+    if (addonsValues[i] && !isNaN(parseInt(addonsValues[i].price))) {
+      showAddons[i].style.display = "flex";
+      addon.innerHTML = addonsValues[i].name;
+      addonPrice[i].innerHTML = addonsValues[i].price;
+    } else {
+      showAddons[i].style.display = "none";
+      addon.innerHTML = "";
+      addonPrice[i].innerHTML = "";
+    }
   });
-  console.log(radioContent, addonsValues);
 }
