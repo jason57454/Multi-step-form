@@ -1,3 +1,5 @@
+
+
 /* Handling fonts */
 
 @font-face {
@@ -616,7 +618,6 @@ button {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-bottom: 20px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -627,6 +628,13 @@ button {
   color: var(--blue);
   text-transform: capitalize;
   margin-bottom: 5px;
+}
+
+.row_11 span {
+  padding-left: 4px;
+  font-size: 16px;
+  color: var(--blue);
+  text-transform: capitalize;
 }
 
 .change_plan {
@@ -649,7 +657,7 @@ button {
 
 .row_9 {
   position: relative;
-  padding-top: 20px;
+  padding-top: 40px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -660,11 +668,16 @@ button {
 
 .line_top::before {
   content: "";
+  margin-top: 40px;
   width: 100%;
   height: 1px;
   background-color: #dadce3;
   position: absolute;
-  top: 0;
+  top: -20px;
+}
+
+.padding_20 {
+  padding-top: 20px !important;
 }
 
 .final_addons {
@@ -688,6 +701,12 @@ button {
 }
 
 .final_price p:nth-child(1) {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.row_10 span {
+  padding-left: 4px;
   color: var(--grey);
   font-size: 14px;
 }
