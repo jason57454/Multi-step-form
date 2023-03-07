@@ -13,6 +13,70 @@ var submit = document.querySelector(".submit");
 var btnStyle = document.querySelector(".space-between");
 var addons = document.querySelectorAll(".wrapper_row_6");
 var i = 0;
+var changePlan = document.querySelector(".change_plan");
+var selectedRadio = null;
+var plansData = document.querySelector(".row_4");
+var switchBtn = document.querySelector(".switch_btn");
+var monthActive = document.querySelector(".switch_month");
+var yearActive = document.querySelector(".switch_year");
+var toggle = document.querySelector(".toggle");
+
+// Initializing array of the second step
+const plans = [
+  {
+    title: "Arcade",
+    image: "./assets/images/icon-arcade.svg",
+    month: "$9/mo",
+    year: "$90/yr",
+    offer: "2 months free",
+  },
+  {
+    title: "Advanced",
+    image: "./assets/images/icon-advanced.svg",
+    month: "$12/mo",
+    year: "$120/yr",
+    offer: "2 months free",
+  },
+  {
+    title: "Pro",
+    image: "./assets/images/icon-pro.svg",
+    month: "$15/mo",
+    year: "$150/yr",
+    offer: "2 months free",
+  },
+];
+
+// Mapping the plans to generate html code
+plansData.innerHTML = plans
+  .map(
+    (plan) => `
+        <div class="wrapper_col_4">
+          <div class="col col_4">
+            <div class="icon_plan">
+              <img src="${plan.image}" alt="" />
+            </div>
+            <label for="col_4" class="medium">${plan.title} </label>
+            
+            <div class="price_month price_plan monthly">${plan.month}</div>
+            <div class="price_year price_plan yearly">${plan.year}</div>
+            <div class="yr_offer yearly">${plan.offer}</div>
+          </div>
+        </div>
+        `
+  )
+  .join("");
+
+try {
+  window.onload = function () {
+    setTimeout(function () {
+      document.querySelector(
+        ".toggle:checked + .slider .slider_circle"
+      ).style.transform = "translateX(8px)";
+    }, 1000);
+  };
+} catch (error) {
+  console.error(error);
+}
 
 // Make sure that the name is a string with letters
 checkName = () => {
@@ -54,7 +118,7 @@ inputs.forEach((input, i) => {
 
   // Check that all inputs have value to enable next step btn
   input.addEventListener("input", () => {
-    const allInputsHaveValue = Array.from(input).every(
+    const allInputsHaveValue = Array.from(inputs).every(
       (input) => input.value !== ""
     );
 
@@ -95,6 +159,159 @@ inputs.forEach((input, i) => {
     }
   });
 });
+
+// Handling focus of step 2
+
+let radio = document.querySelectorAll(".col_4");
+
+function toggleRadio(event) {
+  var targetRadio = event.currentTarget;
+
+  if (selectedRadio !== null) {
+    selectedRadio.classList.remove("selected_plan");
+  }
+
+  if (selectedRadio !== targetRadio) {
+    targetRadio.classList.add("selected_plan");
+    selectedRadio = targetRadio;
+  } else {
+    selectedRadio = null;
+  }
+
+  if (selectedRadio === null) {
+    nextBtn.setAttribute("disabled", true);
+  } else {
+    nextBtn.removeAttribute("disabled");
+  }
+}
+
+radio.forEach(function (radio) {
+  radio.addEventListener("click", toggleRadio);
+});
+
+function handlePlan() {
+  var monthOffer = document.querySelectorAll(".monthly");
+  var yearOffer = document.querySelectorAll(".yearly");
+
+  monthActive.classList.toggle("active_plan");
+  yearActive.classList.toggle("active_plan");
+
+  for (let i = 0; i < 11; i++) {
+    if (monthActive.classList.contains("active_plan")) {
+      if (monthOffer[i]) {
+        monthOffer[i].style.display = "block";
+      }
+      if (yearOffer[i]) {
+        yearOffer[i].style.display = "none";
+      }
+    } else {
+      if (monthOffer[i]) {
+        monthOffer[i].style.display = "none";
+      }
+      if (yearOffer[i]) {
+        yearOffer[i].style.display = "block";
+      }
+    }
+  }
+}
+
+toggle.addEventListener("click", handlePlan);
+
+// Handling add-ons selection
+
+function toggleAddons(event) {
+  event.currentTarget.classList.toggle("addons_active");
+}
+
+addons.forEach(function (addon) {
+  addon.addEventListener("click", toggleAddons);
+});
+
+// Handling last step data
+let radioContent = [];
+let addonsValues = [];
+
+function extractNumbersFromString(str) {
+  const regex = /\d+/g;
+  const matches = str.match(regex);
+  return matches ? parseInt(matches.join("")) : NaN;
+}
+
+function getData() {
+  const selectedPlan = document.querySelector(".selected_plan");
+  let activeAddons = Array.from(document.querySelectorAll(".addons_active"));
+  var finalPlan = document.querySelector(".final_plan");
+  var planPrice = document.querySelector(".plan_price");
+  var showAddons = document.querySelectorAll(".row_9");
+  var finalAddons = document.querySelectorAll(".row_9 .final_addons");
+  var addonPrice = document.querySelectorAll(".row_9 .final_addons_price");
+  var finalPrice = document.querySelector(".total_price");
+
+  radioContent.splice(0, radioContent.length);
+  addonsValues.splice(0, addonsValues.length);
+
+  // Getting the title and price of the step 2 plan
+  let selectedPlanContent = {
+    title: selectedPlan.querySelector("label").textContent,
+    price: monthActive.classList.contains("active_plan")
+      ? selectedPlan.querySelector(".price_month").textContent
+      : selectedPlan.querySelector(".price_year").textContent,
+  };
+  radioContent.push(selectedPlanContent);
+
+  activeAddons.forEach((addons, i) => {
+    let addonData = {
+      name: addons.querySelector(".addon_name").innerHTML,
+      price: monthActive.classList.contains("active_plan")
+        ? addons.querySelector(".addons_month").innerHTML
+        : addons.querySelector(".addons_year").innerHTML,
+    };
+    addonsValues.push(addonData);
+  });
+
+  finalPlan.innerHTML = radioContent[0].title;
+  planPrice.innerHTML = radioContent[0].price;
+
+  finalAddons.forEach((addon, i) => {
+    if (addonsValues[i]) {
+      showAddons[i].style.display = "flex";
+      addon.innerHTML = addonsValues[i].name;
+      addonPrice[i].innerHTML = addonsValues[i].price;
+    } else {
+      showAddons[i].style.display = "none";
+      addon.innerHTML = "";
+      addonPrice[i].innerHTML = "";
+    }
+  });
+
+  let subscriptionPrice = extractNumbersFromString(radioContent[0].price);
+  let addonsPrice = addonsValues.reduce((acc, cur) => {
+    let numbers = extractNumbersFromString(cur.price);
+    if (!isNaN(numbers)) {
+      return acc + numbers;
+    } else {
+      return acc;
+    }
+  }, 0);
+  let totalPrice = subscriptionPrice + addonsPrice;
+  finalPrice.innerHTML = "$" + totalPrice;
+}
+
+function returnPlan() {
+  let changeStep = document.querySelector(".step_2");
+  let removeStep = document.querySelector(".step_4");
+
+  changePlan.addEventListener("click", () => {
+    changeStep.classList.add("active_step");
+    removeStep.classList.remove("active_step");
+    document.querySelector(".submit").style.removeProperty("display");
+    nextBtn.style.display = "block";
+    i = 1;
+    console.log(i);
+  });
+}
+
+returnPlan();
 
 // Handling next and prev btn
 
@@ -146,9 +363,9 @@ function currentStep(event) {
     nextBtn.removeAttribute("disabled");
   }
 
-  // Handling step 2 btn behavior
   if (i > 0 && selectedRadio === null) {
     nextBtn.setAttribute("disabled", true);
+    console.log(i, selectedRadio);
   }
 
   if (i > 2) {
@@ -159,84 +376,11 @@ function currentStep(event) {
 nextBtn.addEventListener("click", currentStep);
 prevBtn.addEventListener("click", currentStep);
 
-// Handling add-ons selection
+submit.addEventListener("click", (event) => {
+  event.preventDefault();
+  let confirmation = document.querySelector(".thanks");
+  let form = document.querySelector(".form");
 
-function toggleActive(event) {
-  event.currentTarget.classList.toggle("addons_active");
-}
-
-addons.forEach(function (addon) {
-  addon.addEventListener("click", toggleActive);
+  confirmation.style.display = "block";
+  form.style.display = "none";
 });
-
-// Handling last step data
-let radioContent = [];
-let addonsValues = [];
-
-function getData() {
-  const selectedPlan = document.querySelector(".selected_plan");
-  let activeAddons = Array.from(document.querySelectorAll(".addons_active"));
-  var finalPlan = document.querySelector(".final_plan");
-  var planPrice = document.querySelector(".plan_price");
-  var showAddons = document.querySelectorAll(".row_9");
-  var finalAddons = document.querySelectorAll(".row_9 .final_addons");
-  var addonPrice = document.querySelectorAll(".row_9 .final_addons_price");
-
-  radioContent.splice(0, radioContent.length);
-  addonsValues.splice(0, addonsValues.length);
-
-  // Getting the title and price of the step 2 plan
-  if (monthActive.classList.contains("active_plan")) {
-    let selectedPlanContent = {
-      title: selectedPlan.querySelector("label").textContent,
-      price: extractPriceFromString(
-        selectedPlan.querySelector(".price_month").textContent
-      ),
-    };
-
-    radioContent.push(selectedPlanContent);
-
-    activeAddons.forEach((addons) => {
-      let addonData = {
-        name: addons.querySelector(".addon_name").innerHTML,
-        price: extractAddonPriceFromString(
-          addons.querySelector(".addons_month").innerHTML
-        ),
-      };
-      addonsValues.push(addonData);
-    });
-  } else if (yearActive.classList.contains("active_plan")) {
-    let selectedPlanContent = {
-      title: selectedPlan.querySelector("label").textContent,
-      price: extractPriceFromString(
-        selectedPlan.querySelector(".price_year").textContent
-      ),
-    };
-    radioContent.push(selectedPlanContent);
-
-    activeAddons.forEach((addons) => {
-      let addonData = {
-        name: addons.querySelector(".addon_name").innerHTML,
-        price: extractAddonPriceFromString(
-          addons.querySelector(".addons_year").innerHTML
-        ),
-      };
-      addonsValues.push(addonData);
-    });
-  }
-
-  finalPlan.innerHTML = radioContent[0].title;
-  planPrice.innerHTML = radioContent[0].price;
-
-  finalAddons.forEach((addon, i) => {
-    if (addonsValues[i] && !isNaN(parseInt(addonsValues[i].price))) {
-      showAddons[i].style.display = "flex";
-      addon.innerHTML = addonsValues[i].name;
-      addonPrice[i].innerHTML = addonsValues[i].price;
-    } else {
-      showAddons[i].style.display = "none";
-      addon.innerHTML = "";
-      addonPrice[i].innerHTML = "";
-    }
-  });
-}
