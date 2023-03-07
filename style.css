@@ -1,5 +1,3 @@
-
-
 /* Handling fonts */
 
 @font-face {
@@ -315,28 +313,6 @@ button {
   justify-content: flex-end;
 }
 
-.next {
-  background-color: var(--blue);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 7px;
-  border-color: transparent;
-  text-transform: capitalize;
-}
-
-.next:hover {
-  background-color: #164a8a;
-}
-
-.next:disabled {
-  background: hsl(227.6, 100%, 83.9%);
-  cursor: auto;
-}
-
-.prev:disabled {
-  opacity: 0;
-}
-
 /* Step 2 settings */
 
 .row_4 {
@@ -453,7 +429,7 @@ button {
   transition: 0.4s;
 }
 
-.slider:before {
+.slider_circle {
   position: absolute;
   content: "";
   height: 12px;
@@ -466,7 +442,7 @@ button {
   transition: 0.4s;
 }
 
-.toggle:checked + .slider:before {
+.toggle:checked + .slider .slider_circle {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -477,21 +453,15 @@ button {
   border-radius: 34px;
 }
 
-.slider.round:before {
+.slider_circle {
   border-radius: 50%;
 }
 
-.prev {
-  color: var(--grey);
-  text-transform: capitalize;
-  background-color: transparent;
-  border-color: transparent;
-  font-size: 16px;
-  display: none;
-}
-
-.prev:hover {
-  color: var(--blue);
+.toggle:not(:checked) + .slider .slider_circle {
+  -webkit-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
+  left: 4px;
 }
 
 /* Step 3 settings */
@@ -593,21 +563,6 @@ button {
 
 /* Step 4 settings */
 
-.submit {
-  background-color: var(--purple);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 7px;
-  border-color: transparent;
-  font-size: 16px;
-  cursor: pointer;
-  display: none;
-}
-
-.submit:hover {
-  background-color: #928cff;
-}
-
 .col_7 {
   background-color: var(--light-grey);
   border-radius: 8px;
@@ -644,6 +599,11 @@ button {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .change_plan:hover {
@@ -724,4 +684,91 @@ button {
 
 .yearly {
   display: none;
+}
+
+/* Buttons settings */
+
+.next {
+  background-color: var(--blue);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 7px;
+  border-color: transparent;
+  text-transform: capitalize;
+}
+
+.next:hover {
+  background-color: #164a8a;
+}
+
+.next:disabled {
+  background: hsl(227.6, 100%, 83.9%);
+  cursor: auto;
+}
+
+.prev {
+  color: var(--grey);
+  text-transform: capitalize;
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 16px;
+  display: none;
+}
+
+.prev:hover {
+  color: var(--blue);
+}
+
+.prev:disabled {
+  opacity: 0;
+}
+
+.submit {
+  background-color: var(--purple);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 7px;
+  border-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+.submit:hover {
+  background-color: #928cff;
+}
+
+/* Confirmation settings */
+
+.thanks {
+  display: none;
+}
+
+.col_11 {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.col_11 img {
+  width: 80px;
+  height: 80px;
+}
+
+.col_11 div {
+  color: var(--blue);
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+.col_11 p {
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 15px;
+  color: var(--grey);
 }
