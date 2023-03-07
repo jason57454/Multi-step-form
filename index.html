@@ -47,7 +47,7 @@
                 </div>
               </div>
             </div>
-            <form class="right_part">
+            <form class="form right_part">
               <div class="col panel">
                 <div class="col step step_1 active_step">
                   <div class="title_step">
@@ -113,7 +113,9 @@
                       <p class="switch_month active_plan bold">Monthly</p>
                       <label class="switch_btn">
                         <input type="checkbox" class="toggle" />
-                        <span class="slider round"></span>
+                        <span class="slider round"
+                          ><span class="slider_circle"></span
+                        ></span>
                       </label>
                       <p class="switch_year bold">Yearly</p>
                     </div>
@@ -211,7 +213,9 @@
                           <span class="monthly bold">(monthly)</span
                           ><span class="yearly bold">(yearly)</span>
                         </div>
-                        <a href="#" class="change_plan">Change</a>
+                        <div class="change_plan" onclick="returnPlan()">
+                          Change
+                        </div>
                       </div>
                       <p class="plan_price"></p>
                     </div>
@@ -244,11 +248,21 @@
                 </div>
               </div>
             </form>
+            <div class="thanks right_part">
+              <div class="col col_11">
+                <img src="./assets/images/icon-thank-you.svg" alt="" />
+                <div class="bold">Thank you!</div>
+                <p>
+                  Thanks for confirming your subscription! We hope you have fun
+                  using our platform. If you ever need support, please feel free
+                  to email us at support@loremgaming.com.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <script src="main.js"></script>
-    <script src="step2.js"></script>
   </body>
 </html>
