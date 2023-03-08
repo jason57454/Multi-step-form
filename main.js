@@ -305,8 +305,8 @@ function getData() {
 function returnPlan() {
   let changeStep = document.querySelector(".step_2");
   let removeStep = document.querySelector(".step_4");
-  let changeNumber = document.querySelector("sc_number");
-  let removeNumber = document.querySelector("last_number");
+  let changeNumber = document.querySelector(".sc_number");
+  let removeNumber = document.querySelector(".last_number");
 
   changePlan.addEventListener("click", () => {
     i = 1;
