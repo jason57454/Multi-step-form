@@ -305,11 +305,15 @@ function getData() {
 function returnPlan() {
   let changeStep = document.querySelector(".step_2");
   let removeStep = document.querySelector(".step_4");
+  let changeNumber = document.querySelector("sc_number");
+  let removeNumber = document.querySelector("last_number");
 
   changePlan.addEventListener("click", () => {
     i = 1;
     changeStep.classList.add("active_step");
     removeStep.classList.remove("active_step");
+    changeNumber.classList.add("active_number");
+    removeNumber.classList.remove("active_number");
     document.querySelector(".submit").style.removeProperty("display");
     nextBtn.style.display = "block";
   });
