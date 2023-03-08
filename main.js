@@ -50,18 +50,19 @@ const plans = [
 plansData.innerHTML = plans
   .map(
     (plan) => `
-        <div class="wrapper_col_4">
-          <div class="col col_4">
-            <div class="icon_plan">
-              <img src="${plan.image}" alt="" />
-            </div>
-            <label for="col_4" class="medium">${plan.title} </label>
-            
-            <div class="price_month price_plan monthly">${plan.month}</div>
-            <div class="price_year price_plan yearly">${plan.year}</div>
-            <div class="yr_offer yearly">${plan.offer}</div>
-          </div>
-        </div>
+    <div class="wrapper_col_4">
+    <div class="col col_4">
+      <div class="icon_plan">
+        <img src="${plan.image}" alt="" />
+      </div>
+      <div class="col col_12">
+        <label for="col_4" class="medium">${plan.title} </label>
+        <div class="price_month price_plan monthly">${plan.month}</div>
+        <div class="price_year price_plan yearly">${plan.year}</div>
+      <div class="yr_offer yearly">${plan.offer}</div>
+      </div>
+    </div>
+  </div>
         `
   )
   .join("");
