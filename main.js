@@ -251,7 +251,7 @@ function getData() {
   radioContent.splice(0, radioContent.length);
   addonsValues.splice(0, addonsValues.length);
 
-  // Getting the title and price of the step 2 plan
+  // Getting the title and price based on user selection
   let selectedPlanContent = {
     title: selectedPlan.querySelector("label").textContent,
     price: monthActive.classList.contains("active_plan")
@@ -285,6 +285,8 @@ function getData() {
     }
   });
 
+  // Extracting numbers from string to calculate the final price
+
   let subscriptionPrice = extractNumbersFromString(radioContent[0].price);
   let addonsPrice = addonsValues.reduce((acc, cur) => {
     let numbers = extractNumbersFromString(cur.price);
@@ -297,6 +299,8 @@ function getData() {
   let totalPrice = subscriptionPrice + addonsPrice;
   finalPrice.innerHTML = "$" + totalPrice;
 }
+
+// Handling btn to change the selected plan
 
 function returnPlan() {
   let changeStep = document.querySelector(".step_2");
