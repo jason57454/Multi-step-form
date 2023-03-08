@@ -307,16 +307,13 @@ function returnPlan() {
   let removeStep = document.querySelector(".step_4");
 
   changePlan.addEventListener("click", () => {
+    i = 1;
     changeStep.classList.add("active_step");
     removeStep.classList.remove("active_step");
     document.querySelector(".submit").style.removeProperty("display");
     nextBtn.style.display = "block";
-    i = 1;
-    console.log(i);
   });
 }
-
-returnPlan();
 
 // Handling next and prev btn
 
@@ -370,12 +367,13 @@ function currentStep(event) {
 
   if (i > 0 && selectedRadio === null) {
     nextBtn.setAttribute("disabled", true);
-    console.log(i, selectedRadio);
   }
 
   if (i > 2) {
     getData();
   }
+
+  returnPlan();
 }
 
 nextBtn.addEventListener("click", currentStep);
