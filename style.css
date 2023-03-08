@@ -1,5 +1,4 @@
 
-
 /* Handling fonts */
 
 @font-face {
@@ -808,15 +807,15 @@ button {
     background-color: hsl(217, 100%, 97%);
     width: 100%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 
   .row_1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 100%;
   }
 
@@ -828,11 +827,11 @@ button {
   .col_1 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     padding: 30px 0;
   }
 
@@ -847,8 +846,8 @@ button {
   .row_4 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
   .right_part {
@@ -857,16 +856,16 @@ button {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     padding: 0;
     width: 100%;
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .step {
@@ -875,7 +874,7 @@ button {
     padding: 30px;
     margin: 15px;
     -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   }
 
   .wrapper_col_4 {
@@ -889,8 +888,8 @@ button {
   .col_4 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 
   .icon_plan {
@@ -918,6 +917,25 @@ button {
     margin: 0;
     position: relative;
     z-index: 10000;
+  }
+
+  .thanks {
+    z-index: 999;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+  }
+
+  .col_11 {
+    border-radius: 8px;
+    padding: 30px;
+    margin: 15px;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: auto;
   }
 }
 
