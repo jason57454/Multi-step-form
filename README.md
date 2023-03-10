@@ -1,4 +1,3 @@
-Currently creating the multi-step form from Front-end mentor website
+This is my version of the multi-step-form from Frontend Mentor.
 
-Some of the code (js mainly) is not optimized yet, as I need to finish the project to optimize it.
-Also I'm just trying things
+Here is the link to preview the website : https://willowy-chimera-76e080.netlify.app/
